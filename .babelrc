@@ -1,0 +1,37 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": 6
+        },
+        "useBuiltIns": true
+      }
+    ],
+    "es2015",
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "add-module-exports",
+    ["direct-import", ["@material-ui/core", "@material-ui/icons"]]
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        "react-optimize"
+      ],
+      "plugins": [
+        "babel-plugin-dev-expression"
+      ]
+    },
+    "development": {
+      "plugins": [
+        "transform-class-properties",
+        "transform-es2015-classes",
+        "react-hot-loader/babel"
+      ]
+    }
+  }
+}
